@@ -2,9 +2,9 @@
   "general": {
     "designResolution": {
       "width": 1080,
-      "height": 1920,
-      "fitHeight": true,
-      "fitWidth": false
+      "height": 1550,
+      "fitHeight": false,
+      "fitWidth": true
     }
   }
 }

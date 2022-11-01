@@ -5,6 +5,7 @@ export enum CS_EVENTS {
   SpinBtn = "SpinBtn",
   ShowResultDlg = "ShowResultDlg",
   PlaySound = "PlaySound",
+  Waiting = "Waiting",
 }
 
 export { eventTarget };

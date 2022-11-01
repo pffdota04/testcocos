@@ -46,7 +46,7 @@ export class ModalController extends Component {
     this._isOpen = false;
     this.DimLayer.active = false;
     tween(this.node)
-      .to(0.25, { position: new Vec3(0, 1280, 0) }, { easing: "quartInOut" })
+      .to(0.5, { position: new Vec3(0, 1550, 0) }, { easing: "quartInOut" })
       .call(() => (this.node.active = false))
       .start();
 

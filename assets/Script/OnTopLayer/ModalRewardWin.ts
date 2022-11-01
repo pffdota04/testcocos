@@ -9,7 +9,7 @@ import {
   Texture2D,
   Sprite,
 } from "cc";
-import { RewardModel } from "../Schema/data.schemas";
+import { RewardModel, REWARD_MODEL } from "../Schema/data.schemas";
 import { ModalController } from "./ModalController";
 const { ccclass, property } = _decorator;
 
@@ -27,12 +27,13 @@ export class ModalRewardWin extends ModalController {
   @property(Label)
   desc: Label | null = null;
 
-  showReward(reward: RewardModel) {
-    this.title.string = reward.name;
+  showReward(reward: REWARD_MODEL) {
+    console.log(reward);
+    this.title.string = reward.label;
 
     const image = this.imageVoucher;
     assetManager.loadRemote<ImageAsset>(
-      reward.image,
+      reward.logoUrl,
       function (err, imageAsset) {
         console.log(err);
         const spriteFrame = new SpriteFrame();
@@ -42,7 +43,7 @@ export class ModalRewardWin extends ModalController {
         image.getComponent(Sprite).spriteFrame = spriteFrame;
       }
     );
-    this.desc.string = reward.desc;
+    this.desc.string = reward.name;
     this.show();
   }
 }

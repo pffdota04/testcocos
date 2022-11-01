@@ -13,10 +13,19 @@ export class Arrow extends Component {
   start() {
     let collider = this.getComponent(PolygonCollider2D);
     let audio = this.getComponent(AudioSource);
-    collider.on(Contact2DType.BEGIN_CONTACT, () => this.playSound(audio), this);
+    collider.on(
+      Contact2DType.BEGIN_CONTACT,
+      (from, start) => {
+        this.playSound(audio);
+        // console.log(from);
+        // console.log(start);
+      },
+      this
+    );
   }
 
   playSound(audio: AudioSource) {
+    // console.log("HIT");
     audio.play();
   }
 }
